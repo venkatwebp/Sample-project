@@ -25,9 +25,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap-utilities.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.js",
+            "../node_modules/tether/dist/js/tether.js",
+            "../node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +100,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fe348450-9b48-4a94-af8a-45ed441f4948"
   }
 }

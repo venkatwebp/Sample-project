@@ -1,0 +1,15 @@
+.navbar .navbar-brand{
+    color: var(--bs-white);
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+    color: var(--bs-white);
+    border-bottom: solid 3px #fff;
+    padding-bottom: 10px;
+}
+.nav-link{
+    color: var(--bs-white);
+    margin: 0 15px;
+}
+.btn-outline-success{
+    color: var(--bs-white);
+}

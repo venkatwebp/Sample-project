@@ -1,0 +1,10 @@
+.card{
+    margin: 10px;
+}
+.card.col-md-3{
+    width: 31% !important;
+}
+.card img{
+    min-height: 125px;
+    max-height: 125px;
+}

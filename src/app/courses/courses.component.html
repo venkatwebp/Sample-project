@@ -1,0 +1,13 @@
+<div class="column container">
+    <div class="m-10 row">
+        <div class="card col-md-3" *ngFor="let course of courses; let i = index">
+            <div class="card-body">
+                <h5 class="card-title">{{course.name}}</h5>
+                <img src="{{course.imagePath}}" class="card-img-top" alt="...">
+                <h6>{{course.version}}</h6>
+              <p class="card-text">{{course.description}}</p>
+              <a href="#" class="btn btn-primary" [routerLink]="['course-details', course.id]">Show Details</a>
+            </div>
+          </div>
+    </div>
+</div>

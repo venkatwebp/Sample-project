@@ -1,0 +1,12 @@
+.details-header{
+    background-color: #EAF0FF;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.details-header img{
+    width: 30%;
+    max-height: 200px;
+}
+.container h2{
+    margin: 15px 0;
+}
