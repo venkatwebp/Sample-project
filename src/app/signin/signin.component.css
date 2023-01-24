@@ -1,6 +1,7 @@
 .signin-container{
     flex-direction: column;
-    height: 800px;
+    height: 100vh;
+    margin: 0;
 }
 .signin-container .signin-section{
     width: 100%;
@@ -36,8 +37,26 @@
     background-size: cover;
     height: 100%;
     min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
 }
 a{
     color: #0a98d7 !important;
     text-decoration: none;
+}
+.welcome-section{
+    background: rgba(250, 2250, 250, 0.35);
+    margin-bottom: 40px;
+    padding: 10px 0;
+    padding-left: 24px;
+}
+.social-media button{
+    min-width: 140px;
+    margin: 0 10px;
+}
+.social-media button svg{
+    margin-right: 12px;
+    margin-top: 0;
 }
