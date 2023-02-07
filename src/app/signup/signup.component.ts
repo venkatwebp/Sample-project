@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { stringLength } from '@firebase/util';
+import { AbstractControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
-import { UserModel } from '../shared/user-model';
+import { UserModel } from '../shared/user-model'
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class SigninComponent {
+export class SignupComponent {
   signinValue !: FormGroup;
   userObj : UserModel = new UserModel();
   submitted: boolean = false;
@@ -27,20 +26,21 @@ export class SigninComponent {
     
   }
 
-  signIn(){
+  signinWithGoogle(){
+    this.auth.signingoogle();
+  }
+
+  signUp(){
     this.submitted = true;
     this.userObj.email = this.signinValue.value.email;
     this.userObj.password = this.signinValue.value.password;
-
-    this.auth.login(this.userObj.email, this.userObj.password);
-  }
-
-  signinWithGoogle(){
-    this.auth.signingoogle();
+    
+    this.auth.signup(this.userObj.email, this.userObj.password);
+    this.userObj.email = '';
+    this.userObj.password = ''; 
   }
 
   get validate(): {[key: string]: AbstractControl}{
     return this.signinValue.controls;
   }
-
 }

@@ -8,3 +8,6 @@
     min-height: 125px;
     max-height: 125px;
 }
+a{
+    color: var(--bs-white) !important;
+}

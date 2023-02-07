@@ -1,14 +1,17 @@
 .navbar .navbar-brand{
-    color: var(--bs-white);
+    color: var(--bs-white) !important;
 }
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
-    color: var(--bs-white);
+    color: var(--bs-white) !important;
     border-bottom: solid 3px #fff;
     padding-bottom: 10px;
 }
 .nav-link{
-    color: var(--bs-white);
+    color: var(--bs-white) !important;
     margin: 0 15px;
+}
+.nav-link:hover{
+    font-weight: bold;
 }
 .btn-outline-success{
     color: var(--bs-white);
