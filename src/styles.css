@@ -1,9 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body{
+    font-family: 'Roboto';
+    font-size: 13px;
+}
 
 /* margin css */
 .mt-10{
     margin-top: 10px !important;
+}
+.mb-12{
+    margin-bottom: 12px !important;
+}
+.ml-12{
+    margin-left: 12px !important;
+}
+.mr-12{
+    margin-right: 12px !important;
+}
+
+/* padding css */
+.p-20{
+    padding: 20px !important;
+}
+.pl-12{
+    padding-left: 12px !important;
+}
+.pt-12{
+    padding-top: 12px !important;
 }
 
 .signin-container{
@@ -61,7 +87,7 @@ a{
     padding-left: 24px;
 }
 .social-media button{
-    min-width: 140px;
+    width: 140px;
     margin: 0 10px;
 }
 .social-media button svg{

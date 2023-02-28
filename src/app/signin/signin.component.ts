@@ -39,6 +39,10 @@ export class SigninComponent {
     this.auth.signingoogle();
   }
 
+  signinWithFacebook(){
+    this.auth.signinfacebook();
+  }
+
   get validate(): {[key: string]: AbstractControl}{
     return this.signinValue.controls;
   }

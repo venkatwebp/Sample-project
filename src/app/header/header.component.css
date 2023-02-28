@@ -16,3 +16,7 @@
 .btn-outline-success{
     color: var(--bs-white);
 }
+.profile-pic img{
+    width: 36px;
+    border-radius: 50%;
+}

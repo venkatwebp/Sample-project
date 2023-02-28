@@ -1,0 +1,20 @@
+<div class="container p-20">
+    <div class="d-flex justify-content-center loader">
+        <img src="../../assets/images/loader.gif" *ngIf="!users" />
+    </div>
+    <div *ngIf="users">
+        <table class="container">
+            <thead>
+                <th>University</th>
+                <th>Web Page</th>
+                <th>country</th>
+            </thead>
+            <tr *ngFor="let user of users | paginate: {itemsPerPage: 15, currentPage: p}">
+                <td width="30%">{{user.name}}</td>
+                <td width="30%">{{user.web_pages}}</td>
+                <td width="40%">{{user.country}}</td>
+            </tr>
+        </table>
+        <pagination-controls (pageChange)="p = $event" class="d-flex justify-content-end"></pagination-controls>
+    </div>
+</div>
