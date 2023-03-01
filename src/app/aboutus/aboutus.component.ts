@@ -13,22 +13,22 @@ export class AboutusComponent {
 
   tutors = [
     {
-      imgPath: '../assets/images/tutor1.jpg',
+      imgPath: './assets/images/tutor1.jpg',
       name: 'Mia Adam',
       designation: 'Founder & CEO'
     },
     {
-      imgPath: '../assets/images/tutor2.jpg',
+      imgPath: './assets/images/tutor2.jpg',
       name: 'Mia Adam',
       designation: 'Founder & CEO'
     },
     {
-      imgPath: '../assets/images/tutor3.jpg',
+      imgPath: './assets/images/tutor3.jpg',
       name: 'Mia Adam',
       designation: 'Founder & CEO'
     },
     {
-      imgPath: '../assets/images/pic4.jpg',
+      imgPath: './assets/images/pic4.jpg',
       name: 'Jaffery Goodwin',
       designation: 'Senior Manager'
     }

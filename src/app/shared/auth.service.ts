@@ -19,7 +19,7 @@ export class AuthService {
   public user = new BehaviorSubject<User>(<User><unknown>{
     displayName: 'Ram',
     emailVerified: 'false',
-    photoURL: '../../assets/images/blank-profile.png'
+    photoURL: '././assets/images/blank-profile.png'
   });
 
   // public url = 'http://universities.hipolabs.com/search?country=United+States';
@@ -129,7 +129,7 @@ export class AuthService {
   }
 
   getUnivercityData(){
-    return this.http.get('http://universities.hipolabs.com/search?country=United+States');   
+    return this.http.get('https://gorest.co.in/public/v2/users');   
   }
 
 }

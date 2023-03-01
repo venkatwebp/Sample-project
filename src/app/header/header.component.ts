@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   userName: any;
   logStatus: boolean = false;
-  imagePath: string = '../../assets/images/blank-profile.png';
+  imagePath: string = '././assets/images/blank-profile.png';
   users: any;
   
 

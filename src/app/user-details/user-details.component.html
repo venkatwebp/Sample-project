@@ -1,18 +1,22 @@
 <div class="container p-20">
     <div class="d-flex justify-content-center loader">
-        <img src="../../assets/images/loader.gif" *ngIf="!users" />
+        <img src="././assets/images/loader.gif" *ngIf="!users" />
     </div>
     <div *ngIf="users">
         <table class="container">
             <thead>
-                <th>University</th>
-                <th>Web Page</th>
-                <th>country</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Status</th>
             </thead>
             <tr *ngFor="let user of users | paginate: {itemsPerPage: 15, currentPage: p}">
-                <td width="30%">{{user.name}}</td>
-                <td width="30%">{{user.web_pages}}</td>
-                <td width="40%">{{user.country}}</td>
+                <td width="10%">{{user.id}}</td>
+                <td width="20%">{{user.name}}</td>
+                <td width="20%">{{user.email}}</td>
+                <td width="20%">{{user.gender}}</td>
+                <td width="20%">{{user.status}}</td>
             </tr>
         </table>
         <pagination-controls (pageChange)="p = $event" class="d-flex justify-content-end"></pagination-controls>
