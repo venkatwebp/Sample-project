@@ -48,7 +48,7 @@ export class CommonService {
     {
       id: 3,
       name: 'Javascript',
-      imagePath: '../assets/js.png',
+      imagePath: './assets/js.png',
       version: 'Vesion : 12',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -61,7 +61,7 @@ export class CommonService {
     {
       id: 4,
       name: 'Jquery',
-      imagePath: '../assets/jquery.png',
+      imagePath: './assets/jquery.png',
       version: 'Vesion : 7',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -74,7 +74,7 @@ export class CommonService {
     {
       id: 5,
       name: 'MongoDB',
-      imagePath: '../assets/mongodb.png',
+      imagePath: './assets/mongodb.png',
       version: 'Vesion : 14',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {

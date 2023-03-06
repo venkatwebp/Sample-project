@@ -15,6 +15,7 @@ export class AuthService {
   // public userName = new BehaviorSubject<string>(this.name);
   // public logInStatus = new BehaviorSubject<boolean>(false);
   // public imagePath = new BehaviorSubject<string>('../../assets/images/blank-profile.png');
+  statusName: boolean = false;
 
   public user = new BehaviorSubject<User>(<User><unknown>{
     displayName: 'Ram',
@@ -66,7 +67,7 @@ export class AuthService {
         // this.setLogInStatus(true); 
 
 
-        this.setUserList(JSON.stringify(res.user));     
+        this.setUserList(res.user);     
         this.router.navigate(['./courses']);
       }else{
         this.router.navigate(['./verify-email']);
@@ -94,6 +95,7 @@ export class AuthService {
     this.fireAuth.signOut().then( () =>{
       localStorage.removeItem('user');
       // this.setLogInStatus(false);
+      this.statusName = true;
       this.router.navigate(['./signin']);
     }, err => {
       this.router.navigate(['./signup']);

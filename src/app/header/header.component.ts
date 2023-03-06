@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   logStatus: boolean = false;
   imagePath: string = '././assets/images/blank-profile.png';
   users: any;
+  statusName: boolean =false;
   
 
   constructor(private router: Router, private auth: AuthService){}
@@ -34,13 +35,19 @@ export class HeaderComponent implements OnInit {
     // })
 
     this.auth.getUserList().subscribe((res: any) =>{
-        this.users = JSON.parse(res);
+      console.log(res);
+      this.users = res;
+        // this.users = JSON.parse(res);
         console.log(this.users);
         
         
         this.userName = this.users.displayName;
         // this.logStatus = this.users.emailVerified;
         this.imagePath = this.users.photoURL;
+
+        if(this.userName != 'Ram'){
+          this.logStatus = true;
+        }
           
     })
 
@@ -48,11 +55,14 @@ export class HeaderComponent implements OnInit {
 
   signin(){
     this.router.navigate(['/signin']);
-    this.logStatus = true;
   }
   signOut(){
     this.auth.signout();
     this.router.navigate(['./signin']);
-    this.logStatus = false;
+    this.statusName = true;
+      // if(!localStorage.getItem('user')){
+      //   console.log(localStorage.getItem('user'));
+      // }
+    
   }
 }

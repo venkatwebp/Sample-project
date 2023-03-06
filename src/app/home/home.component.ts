@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit{
   ngOnInit(){
     // this.title = this.auth.getUserName();
     this.auth.getUserList().subscribe((res:any) =>{
-      this.user = JSON.parse(res);
+      this.user = res;
       this.title = this.user.displayName;
       
     })
