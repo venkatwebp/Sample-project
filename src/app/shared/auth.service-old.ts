@@ -7,12 +7,18 @@ import { FacebookAuthProvider, GoogleAuthProvider } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user.interface';
 import { HttpClient } from '@angular/common/http';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  // name = 'Ramaraj'
+  // public userName = new BehaviorSubject<string>(this.name);
+  // public logInStatus = new BehaviorSubject<boolean>(false);
+  // public imagePath = new BehaviorSubject<string>('../../assets/images/blank-profile.png');
+  statusName: boolean = false;
   userData: any;
 
   public user = new BehaviorSubject<User>(<User><unknown>{
@@ -41,9 +47,7 @@ export class AuthService {
         if(user){
           this.userData = user;
           localStorage.setItem('user', JSON.stringify(this.userData));
-          JSON.parse(localStorage.getItem('user')!);
-          console.log(this.userData);
-          
+          JSON.parse(localStorage.getItem('user')!)
         }else{
           localStorage.setItem('user', 'null');
           JSON.parse(localStorage.getItem('user')!);
@@ -54,69 +58,59 @@ export class AuthService {
   
   //log in 
   login(email: string, password: string){
-    return this.fireAuth.signInWithEmailAndPassword(email, password)
-    .then((result) => {
-      this.SetUserData(result.user);
-      this.fireAuth.authState.subscribe((user) =>{
-        if(user){
-          this.router.navigate(['./home']);
-        }
-      })
-    })
-    .catch((error) =>{
-      window.alert(error.message);
+    this.fireAuth.signInWithEmailAndPassword(email, password).then( res => {
+      if(res.user?.emailVerified == true){
+        localStorage.setItem('user', JSON.stringify(res.user?.displayName));
+
+
+        this.setUserList(res.user);     
+        this.router.navigate(['./courses']);
+      }else{
+        this.router.navigate(['./verify-email']);
+      }
+    }, err => {
+      alert('something went wrong');
+      this.router.navigate(['./signin']);
     })
   }
 
   //signup
   signup(email: string, password:string){
-    return this.fireAuth.createUserWithEmailAndPassword(email, password).then( (result) =>{
-      this.sendEmailForVerification();
-      this.SetUserData(result.user);
-    }).catch((error) =>{
-      window.alert(error.message)
-    })
-  }
-
-  sendEmailForVerification(){
-    return this.fireAuth.currentUser
-    .then((u: any) => u.sendEmailForVerification())
-    .then(() => {
-      this.router.navigate(['verify-email-address'])
-    })
-  }
-
-  SetUserData(user: any){
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      'users/${user.uid}'
-    );
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
-    }
-
-    return userRef.set(userData, {
-      merge: true
+    this.fireAuth.createUserWithEmailAndPassword(email, password).then( res =>{
+      alert('Registration Successful')
+      this.router.navigate(['./signin']);
+      this.sendEmailForVerification(res.user);
+    }, err =>{
+      alert("something went wrong");
+      this.router.navigate(['./signup'])
     })
   }
 
   //signout
   signout(){
-    return this.fireAuth.signOut().then(() => {
+    this.fireAuth.signOut().then( () =>{
       localStorage.removeItem('user');
-      this.router.navigate(['./signin'])
+      // this.setLogInStatus(false);
+      this.statusName = true;
+      this.router.navigate(['./signin']);
+    }, err => {
+      this.router.navigate(['./signup']);
     })
   };
+
+  sendEmailForVerification(user: any){
+    user.sendEmailForVerification().then( (res: any) =>{
+      this.router.navigate(['./verify-email'])
+    }, (err : any) => {
+      alert("Something went wrong. Not able to send mail to your email.")
+    })
+  }
 
   //signingoogle
   signingoogle(){
     return this.fireAuth.signInWithPopup(new GoogleAuthProvider).then( res => {
-      this.router.navigate(['./home']);
-      // localStorage.setItem('token', JSON.stringify(res.user?.displayName));
-      this.SetUserData(res.user);
+      this.router.navigate(['./courses']);
+      localStorage.setItem('token', JSON.stringify(res.user?.displayName));
       
     })
   }
@@ -124,9 +118,9 @@ export class AuthService {
   
   signinfacebook(){
     return this.fireAuth.signInWithPopup(new FacebookAuthProvider).then(res =>{
-      this.router.navigate(['./home']);
-      this.SetUserData(res.user);
-      // localStorage.setItem('facebook', JSON.stringify(res.user?.email));
+      console.log("Success");      
+      this.router.navigate(['./courses']);
+      localStorage.setItem('facebook', JSON.stringify(res.user?.email));
     }, err =>{
       console.log('Facebook Error', err)
     })
@@ -134,11 +128,6 @@ export class AuthService {
 
   getUnivercityData(){
     return this.http.get('https://gorest.co.in/public/v2/users');   
-  }
-
-  get isLoggedIn(): boolean{
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
 }

@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   statusName: boolean =false;
   
 
-  constructor(private router: Router, private auth: AuthService){}
+  constructor(private router: Router, public auth: AuthService){}
 
   ngOnInit(){
     // this.title = this.auth.getUserName();
@@ -33,6 +33,9 @@ export class HeaderComponent implements OnInit {
     // this.auth.getImage().subscribe(res => {
     //   this.profile = res.replace(/['"]+/g, '');
     // })
+
+    this.logStatus = this.auth.userData;
+    
 
     this.auth.getUserList().subscribe((res: any) =>{
       console.log(res);
