@@ -25,8 +25,8 @@
 
         </ul>
         <div class="mr-12">
-          <!-- <button class="btn btn-primary" *ngIf="!logStatus" (click)="signin()">Log in</button> -->
-          <button class="btn btn-primary" (click)="auth.signout()">Log out</button>
+          <button class="btn btn-primary" *ngIf="!auth.isLoggedIn" (click)="signin()">Log in</button>
+          <button class="btn btn-primary" *ngIf="auth.isLoggedIn" (click)="auth.signout()">Log out</button>
           
         </div>
         <div class="profile-pic">

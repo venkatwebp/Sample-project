@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
     //   this.profile = res.replace(/['"]+/g, '');
     // })
 
-    this.logStatus = this.auth.userData;
+    console.log(this.auth.isLoggedIn);
     
 
     this.auth.getUserList().subscribe((res: any) =>{
