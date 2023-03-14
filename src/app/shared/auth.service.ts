@@ -4,9 +4,10 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { FacebookAuthProvider, GoogleAuthProvider } from '@angular/fire/auth';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject, tap } from 'rxjs';
 import { User } from './user.interface';
 import { HttpClient } from '@angular/common/http';
+import { user_data } from './userdata.model';
 
 
 @Injectable({
@@ -14,6 +15,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   userData: any;
+  
+  userInfo = new Subject<user_data>();
 
   public user = new BehaviorSubject<User>(<User><unknown>{
     displayName: 'Ram',
@@ -57,6 +60,7 @@ export class AuthService {
     return this.fireAuth.signInWithEmailAndPassword(email, password)
     .then((result) => {
       this.SetUserData(result.user);
+      console.log(result);
       this.fireAuth.authState.subscribe((user) =>{
         if(user){
           this.router.navigate(['./home']);
@@ -66,6 +70,9 @@ export class AuthService {
     .catch((error) =>{
       window.alert(error.message);
     })
+    // tap(res => {
+    //   this.authenticatedUser(res.email, res.localId, res.idToken, res.expiresIn);
+    // })
   }
 
   //signup
@@ -139,6 +146,13 @@ export class AuthService {
   get isLoggedIn(): boolean{
     const user = JSON.parse(localStorage.getItem('user')!);
     return (user !== null && user.emailVerified !== false) ? true : false;
+  }
+
+  private authenticatedUser(email: any, userId: any, token: any, expiresIn: number){
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    const user = new user_data(email, userId, token, expirationDate);
+
+    this.userInfo.next(user);
   }
 
 }

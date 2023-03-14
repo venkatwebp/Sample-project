@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit{
   titleText: any;
   user: any;
 
-  constructor(private auth: AuthService){}
+  constructor(public auth: AuthService){}
 
   services = [
     {

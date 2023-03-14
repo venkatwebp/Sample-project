@@ -9,7 +9,7 @@ import { AuthService } from '../shared/auth.service';
 export class AboutusComponent {
   title: any;
 
-  constructor( private auth: AuthService){}
+  constructor( public auth: AuthService){}
 
   tutors = [
     {
