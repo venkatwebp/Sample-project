@@ -47,10 +47,6 @@ export class HeaderComponent implements OnInit {
         this.userName = this.users.displayName;
         // this.logStatus = this.users.emailVerified;
         this.imagePath = this.users.photoURL;
-
-        if(this.userName != 'Ram'){
-          this.logStatus = true;
-        }
           
     })
 
