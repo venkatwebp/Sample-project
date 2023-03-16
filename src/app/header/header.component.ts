@@ -25,15 +25,6 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, public auth: AuthService){}
 
   ngOnInit(){
-    // this.title = this.auth.getUserName();
-    // this.auth.getLogInStatus().subscribe(res =>{
-    //   this.isLoggedIn = res;
-    // });
-
-    // this.auth.getImage().subscribe(res => {
-    //   this.profile = res.replace(/['"]+/g, '');
-    // })
-
     console.log(this.auth.isLoggedIn);
     
 
@@ -59,9 +50,5 @@ export class HeaderComponent implements OnInit {
     this.auth.signout();
     this.router.navigate(['./signin']);
     this.statusName = true;
-      // if(!localStorage.getItem('user')){
-      //   console.log(localStorage.getItem('user'));
-      // }
-    
   }
 }

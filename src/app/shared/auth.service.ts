@@ -24,8 +24,6 @@ export class AuthService {
     photoURL: '././assets/images/blank-profile.png'
   });
 
-  // public url = 'http://universities.hipolabs.com/search?country=United+States';
-
   setUserList(val: any){
     this.user.next(val);
   }
@@ -70,9 +68,6 @@ export class AuthService {
     .catch((error) =>{
       window.alert(error.message);
     })
-    // tap(res => {
-    //   this.authenticatedUser(res.email, res.localId, res.idToken, res.expiresIn);
-    // })
   }
 
   //signup
@@ -146,13 +141,6 @@ export class AuthService {
   get isLoggedIn(): boolean{
     const user = JSON.parse(localStorage.getItem('user')!);
     return (user !== null && user.emailVerified !== false) ? true : false;
-  }
-
-  private authenticatedUser(email: any, userId: any, token: any, expiresIn: number){
-    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-    const user = new user_data(email, userId, token, expirationDate);
-
-    this.userInfo.next(user);
   }
 
 }
