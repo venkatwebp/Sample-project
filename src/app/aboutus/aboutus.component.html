@@ -1,5 +1,5 @@
 <div class="container p-20">
-    <h3>Welcome to {{auth.userData.displayName}}</h3>
+    <h3 #abouthead>Welcome to {{auth.isLoggedIn ? auth.userData.displayName : 'Ram'}}</h3>
     <h5>Meet our team of Creators, designers, and world class problem solvers</h5>
 
     <div class="row">

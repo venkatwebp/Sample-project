@@ -15,9 +15,13 @@ export class CourseDetailsComponent implements OnInit {
   constructor(private common: CommonService, private activeRoute: ActivatedRoute){}
 
   ngOnInit(){
-    this.currentCourseId = this.activeRoute.snapshot.paramMap.get('id');
-    this.currentCourse = this.common.courses.find(x => x.id == this.currentCourseId);
-    console.log(this.currentCourseId);
+    // this.currentCourseId = this.activeRoute.snapshot.paramMap.get('id');
+    // this.currentCourse = this.common.courses.find(x => x.id == this.currentCourseId);
+
+    this.activeRoute.paramMap.subscribe(e =>{
+      this.currentCourseId = e.get('id');
+      this.currentCourse = this.common.courses.find(x => x.id == this.currentCourseId);
+    })
     
   }
 

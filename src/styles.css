@@ -4,7 +4,7 @@
 
 body{
     font-family: 'Roboto';
-    font-size: 13px;
+    font-size: 16px;
 }
 
 /* margin css */
@@ -19,6 +19,9 @@ body{
 }
 .mr-12{
     margin-right: 12px !important;
+}
+.mr-20{
+    margin-right: 20px !important;
 }
 
 /* padding css */
@@ -93,4 +96,13 @@ a{
 .social-media button svg{
     margin-right: 12px;
     margin-top: 0;
+}
+h4{
+    color: green;
+}
+
+@media screen and (max-width: 1023px){
+    .signin-right{
+        display: none;
+    }
 }

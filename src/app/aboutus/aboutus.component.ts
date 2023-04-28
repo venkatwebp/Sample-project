@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
@@ -6,8 +6,10 @@ import { AuthService } from '../shared/auth.service';
   templateUrl: './aboutus.component.html',
   styleUrls: ['./aboutus.component.css']
 })
-export class AboutusComponent {
+export class AboutusComponent implements OnInit, AfterViewInit {
   title: any;
+  // @ViewChild('abouthead')marker: ElementRef;
+  @ViewChildren('abouthead')marker: QueryList<any>;
 
   constructor( public auth: AuthService){}
 
@@ -38,8 +40,23 @@ export class AboutusComponent {
     // this.title = this.auth.getUserName();
     this.auth.getUserList().subscribe(res =>{
       this.title = res.displayName;
-    })
+    });  
 
+    // for(let i = 0; i < 5; i++){
+    //   var btn = document.createElement('button');
+    //   btn.appendChild(document.createTextNode('Button ' + i));
+    //   btn.addEventListener('click', function(){console.log(i);})
+    //   document.body.appendChild(btn);
+    // }
+
+  }
+
+  ngAfterViewInit() {
+    console.log(this.marker);
+    this.marker.first.nativeElement.style.color = 'green';
+    this.marker.last.nativeElement.style.color = 'green';
+    
+    // this.marker.nativeElement.style.color = 'red';
   }
 
 }

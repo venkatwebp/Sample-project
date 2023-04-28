@@ -23,8 +23,11 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { AuthInterceptor } from './auth.interceptor';
+import { AuthInterceptor } from './shared/auth.interceptor';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { FilterCoursesComponent } from './courses/filter-courses/filter-courses.component';
+import { LoginInterceptor } from './shared/login.interceptor';
+import { RainbowDirective } from './shared/custom-directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     HomeComponent,
     AboutusComponent,
     UserDetailsComponent,
+    FilterCoursesComponent,
+    RainbowDirective,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true},
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]

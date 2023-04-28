@@ -11,6 +11,7 @@ export class CommonService {
       name: 'React',
       imagePath: 'https://149695847.v2.pressablecdn.com/wp-content/uploads/2021/01/pasted-image-0-2.png',
       version: 'Vesion : 7',
+      type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',
@@ -24,6 +25,7 @@ export class CommonService {
       name: 'Angular',
       imagePath: 'https://www.levelaccess.com/wp-content/uploads/2015/08/AngularJS_google.png',
       version: 'Vesion : 14',
+      type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',
@@ -35,8 +37,9 @@ export class CommonService {
     {
       id: 2,
       name: 'Vue',
-      imagePath: 'https://miro.medium.com/max/720/1*OrjCKmou1jT4It5so5gvOA.jpeg',
+      imagePath: './assets/vueart.png',
       version: 'Vesion : 3',
+      type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',
@@ -48,8 +51,9 @@ export class CommonService {
     {
       id: 3,
       name: 'Javascript',
-      imagePath: './assets/js.png',
+      imagePath: './assets/javascript.png',
       version: 'Vesion : 12',
+      type: 'free',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',
@@ -63,6 +67,7 @@ export class CommonService {
       name: 'Jquery',
       imagePath: './assets/jquery.png',
       version: 'Vesion : 7',
+      type: 'free',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',
@@ -76,6 +81,7 @@ export class CommonService {
       name: 'MongoDB',
       imagePath: './assets/mongodb.png',
       version: 'Vesion : 14',
+      type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
         head1: 'Declarative',

@@ -1,6 +1,15 @@
 <div class="column container">
+    <div class="row">
+      <app-filter-courses 
+      [all]="getTotalCourses()"
+      [free]="getFreeCourses()"
+      [premium]="getPremiumCourse()" #childView
+      (FilterRadioButtonSelectChange)="onFIlterButtonValueChanges($event)"></app-filter-courses>
+    </div>
+
     <div class="m-10 row">
-        <div class="card col-md-3" *ngFor="let course of courses; let i = index">
+      <ng-container *ngFor="let course of courses; let i = index">
+        <div class="card col-md-3" *ngIf="onFilterButtonValue === 'all' || onFilterButtonValue === course.type">
             <div class="card-body">
                 <h5 class="card-title">{{course.name}}</h5>
                 <img src="{{course.imagePath}}" class="card-img-top" alt="...">
@@ -8,6 +17,7 @@
               <p class="card-text">{{course.description}}</p>
               <a href="#" class="btn btn-primary" [routerLink]="['course-details', course.id]">Show Details</a>
             </div>
-          </div>
+        </div>
+      </ng-container>
     </div>
 </div>

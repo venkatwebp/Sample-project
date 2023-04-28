@@ -14,10 +14,10 @@ const routes: Routes = [
   {path: '', component: SigninComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'home', component: HomeComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'courses', component: CoursesComponent},
-  {path: 'courses/course-details/:id', component: CourseDetailsComponent},
+  {path: 'courses/course-details/:id', component: CourseDetailsComponent, canActivate: [AuthGuard]},
   {path: 'verify-email', component: VerifyEmailComponent},
   {path: 'user-details', component: UserDetailsComponent}
 ];

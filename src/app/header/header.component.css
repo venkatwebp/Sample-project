@@ -9,11 +9,10 @@
 .nav-link{
     color: var(--bs-white) !important;
     margin: 0 15px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 16px;
 }
 .nav-link:hover{
-    border-bottom: solid 1px;
+    font-weight: bold;
 }
 .btn-outline-success{
     color: var(--bs-white);
@@ -24,4 +23,22 @@
 }
 .border-right{
     border-right: solid 1px rgba(255, 255, 255, 0.5);
+}
+.login-menu{
+    position: absolute;
+    right: 12px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: end; */
+}
+/* .container-fluid{
+    justify-content: start;
+} */
+@media screen and (max-width: 1023px){
+    .mobile-none{
+        display: none;
+    }
+    .login-menu{
+        position: relative;
+    }
 }

@@ -1,11 +1,11 @@
 <div class="signin-container row d-flex justify-content-center align-items-center">
     <div class="col-md-5 d-flex justify-content-center  align-items-center row">
         <div class="row col-md-10 d-flex justify-content-center">
-            <h2 class="text-center column">Welcome back!</h2>
+            <h2 class="text-center column" #header>Welcome back!</h2>
             <p class="column text-center"> Log in to learning</p>
             <form class="row" [formGroup]="signinValue" (ngSubmit)="signIn()"> 
                     <div class="signin-section">
-                        <input class="m-t-10" type="email" placeholder="Email" formControlName="email" class="row">
+                        <input appRainbow class="m-t-10" type="email" placeholder="Email" formControlName="email" class="row">
                         <div *ngIf="submitted && validate?.['email']?.errors" class="row error-section">
                             <span class="text-red" *ngIf="validate?.['email']?.errors?.['email']">Email is invalid</span>
                             <span class="text-red" *ngIf="validate?.['email']?.errors?.['required']">Email is required</span>
@@ -43,7 +43,7 @@
                 </div>
         </div>
     </div>
-    <div class="col-md-7 row p-0">
+    <div class="col-md-7 row p-0 signin-right">
         <div class="bg-wrapper">
             <div class="welcome-section d-flex row align-items-end">
                 <h2>Welcome to Easy Learn!</h2>

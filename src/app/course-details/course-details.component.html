@@ -2,10 +2,13 @@
     <h2>{{currentCourse.name}}</h2>
     <div class="details-header row">
         <img class="col-md-5" [src]="currentCourse.imagePath" />
-        <p class="col-md-7">{{currentCourse.description}}</p>
+        <p class="col-md-7 display-6">{{currentCourse.description}}</p>
     </div>
     <h5>{{currentCourse.details.head1}}</h5>
     <p>{{currentCourse.details.para1}}</p>
     <h5>{{currentCourse.details.head2}}</h5>
     <p>{{currentCourse.details.para2}}</p>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary" [routerLink]="['/courses/course-details', 1]">Back</button>
+    </div>
 </div>

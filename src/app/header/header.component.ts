@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../shared/auth.service';
@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn: boolean = false;
   profile: any;
+  showBackMenu: boolean;
 
   userName: any;
   logStatus: boolean = false;
@@ -22,7 +23,10 @@ export class HeaderComponent implements OnInit {
   statusName: boolean =false;
   
 
-  constructor(private router: Router, public auth: AuthService){}
+  constructor(private router: Router, 
+    public auth: AuthService,
+    private element: ElementRef,
+    private renderer: Renderer2){}
 
   ngOnInit(){
     console.log(this.auth.isLoggedIn);
@@ -50,5 +54,10 @@ export class HeaderComponent implements OnInit {
     this.auth.signout();
     this.router.navigate(['./signin']);
     this.statusName = true;
+  }
+
+  @HostListener('touchstart')
+  touchstart(){
+    this.renderer.setStyle(this.element.nativeElement, 'background-color', 'red');
   }
 }
