@@ -1,7 +1,16 @@
 .card{
     background-color: #e1e1e1;
+    padding: 2px;
+    border: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.card img{
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+.img-section{
+    margin: 16px 0;
+    width: 50%;
+}
+.img-section img{
+    width: 75%;
+}
+.about-text{
+    width: 50%;
 }

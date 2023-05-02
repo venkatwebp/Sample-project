@@ -11,11 +11,22 @@
       <ng-container *ngFor="let course of courses; let i = index">
         <div class="card col-md-3" *ngIf="onFilterButtonValue === 'all' || onFilterButtonValue === course.type">
             <div class="card-body">
-                <h5 class="card-title">{{course.name}}</h5>
+              <div class="card-img d-flex flex-row justify-content-center">
                 <img src="{{course.imagePath}}" class="card-img-top" alt="...">
-                <h6>{{course.version}}</h6>
-              <p class="card-text">{{course.description}}</p>
-              <a href="#" class="btn btn-primary" [routerLink]="['course-details', course.id]">Show Details</a>
+              </div>
+              <div class="pl-12 pr-12">
+                <div class="d-flex flex-row justify-content-between align-items-center card-title">
+                  <h5>{{course.name}}</h5>
+                  <label>{{course.version}}</label>
+                </div>
+                <p class="card-text">{{course.description}}</p>
+                <!-- <a href="#" class="btn btn-primary" >Show Details</a> -->
+              </div>
+              <div class="card-footer d-flex flex-row justify-content-end">
+                <button class="btn d-flex flex-row read-more justify-content-center align-items-center" [routerLink]="['course-details', course.id]">
+                      <span class="material-icons">chevron_right</span>
+                </button>
+              </div>
             </div>
         </div>
       </ng-container>

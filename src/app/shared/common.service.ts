@@ -9,8 +9,8 @@ export class CommonService {
     {
       id: 0,
       name: 'React',
-      imagePath: 'https://149695847.v2.pressablecdn.com/wp-content/uploads/2021/01/pasted-image-0-2.png',
-      version: 'Vesion : 7',
+      imagePath: './assets/react.png',
+      version: 'Vesion : 18',
       type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -23,7 +23,7 @@ export class CommonService {
     {
       id: 1,
       name: 'Angular',
-      imagePath: 'https://www.levelaccess.com/wp-content/uploads/2015/08/AngularJS_google.png',
+      imagePath: './assets/angular.png',
       version: 'Vesion : 14',
       type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
@@ -37,8 +37,8 @@ export class CommonService {
     {
       id: 2,
       name: 'Vue',
-      imagePath: './assets/vueart.png',
-      version: 'Vesion : 3',
+      imagePath: './assets/vue.png',
+      version: 'Vesion : 3.2.47',
       type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -51,8 +51,8 @@ export class CommonService {
     {
       id: 3,
       name: 'Javascript',
-      imagePath: './assets/javascript.png',
-      version: 'Vesion : 12',
+      imagePath: './assets/js.png',
+      version: 'Vesion : ES6',
       type: 'free',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -64,9 +64,9 @@ export class CommonService {
     },
     {
       id: 4,
-      name: 'Jquery',
-      imagePath: './assets/jquery.png',
-      version: 'Vesion : 7',
+      name: 'Node JS',
+      imagePath: './assets/node.png',
+      version: 'Vesion : 18.16',
       type: 'free',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
       details: {
@@ -78,8 +78,64 @@ export class CommonService {
     },
     {
       id: 5,
-      name: 'MongoDB',
-      imagePath: './assets/mongodb.png',
+      name: 'HTML5',
+      imagePath: './assets/html5.png',
+      version: 'Vesion : 5',
+      type: 'premium',
+      description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
+      details: {
+        head1: 'Declarative',
+        para1: 'React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.',
+        head2: 'Component-Based',
+        para2: 'Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DO'
+      }
+    },
+    {
+      id: 6,
+      name: 'CSS3',
+      imagePath: './assets/css3.png',
+      version: 'Vesion : 3',
+      type: 'premium',
+      description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
+      details: {
+        head1: 'Declarative',
+        para1: 'React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.',
+        head2: 'Component-Based',
+        para2: 'Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DO'
+      }
+    },
+    {
+      id: 7,
+      name: 'Adobexd',
+      imagePath: './assets/adobexd.png',
+      version: 'Vesion : 42.1.22',
+      type: 'premium',
+      description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
+      details: {
+        head1: 'Declarative',
+        para1: 'React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.',
+        head2: 'Component-Based',
+        para2: 'Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DO'
+      }
+    },
+    {
+      id: 8,
+      name: 'Figma',
+      imagePath: './assets/figma.png',
+      version: 'Vesion : 14',
+      type: 'premium',
+      description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',
+      details: {
+        head1: 'Declarative',
+        para1: 'React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.',
+        head2: 'Component-Based',
+        para2: 'Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DO'
+      }
+    },
+    {
+      id: 9,
+      name: 'EmberJS',
+      imagePath: './assets/ember.png',
       version: 'Vesion : 14',
       type: 'premium',
       description: 'Build encapsulated components that manage their own state, then compose them to make complex UIs.',

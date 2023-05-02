@@ -53,8 +53,8 @@ export class AboutusComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     console.log(this.marker);
-    this.marker.first.nativeElement.style.color = 'green';
-    this.marker.last.nativeElement.style.color = 'green';
+    this.marker.first.nativeElement.style.color = '#015abd';
+    this.marker.last.nativeElement.style.color = '#015abd';
     
     // this.marker.nativeElement.style.color = 'red';
   }

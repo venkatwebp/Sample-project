@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-primary navbar-fixed-top">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-fixed-top">
+    <div class="container-fluid container">
       <!-- <button id="back" class="tn menuElement">
         <i class="bi bi-arrow-left"></i>
       </button> -->
       <div class="column" class="border-right">
-        <a class="navbar-brand" href="#">Sample Project</a>
+        <a class="navbar-brand" href="#"><span class="logo-bold">Sample</span> Project</a>
       </div>
       <div class="login-menu">
         <div class="d-flex flex-row">
           <div class="mr-12">
-            <button class="btn btn-primary" *ngIf="!auth.isLoggedIn" (click)="signin()">Log in</button>
-            <button class="btn btn-primary" *ngIf="auth.isLoggedIn" (click)="auth.signout()">Log out</button>          
+            <button class="btn" *ngIf="!auth.isLoggedIn" (click)="signin()">Log in</button>
+            <button class="btn" *ngIf="auth.isLoggedIn" (click)="auth.signout()">Log out</button>          
           </div>
           <div class="profile-pic">
             <img src="{{auth.isLoggedIn ? auth.userData.photoURL : '././assets/images/blank-profile.png'}}" />

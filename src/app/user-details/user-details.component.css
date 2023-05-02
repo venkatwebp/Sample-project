@@ -1,8 +1,13 @@
-table, tr, th, td{
-    border: solid 1px #333;
-}
 th, td{
     padding: 5px 10px;
+}
+.user-table{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-size: 13px;
+    color: rgba(50, 50, 93, 0.75);
+}
+.user-table thead{
+    background-color: #f0f0ff;
 }
 
 pagination-controls{
@@ -21,4 +26,18 @@ pagination-controls pagination-template nav{
 }
 .loader img{
     width: 69%;
+}
+.active{
+    background-color: #cbf1d1;
+    color: #45a657;
+    border-radius: 12px;
+    border: 0;
+    width: 90px;
+}
+.inactive{
+    background-color: #f9ccc9;
+    color: #d86359;
+    border-radius: 12px;
+    border: 0;
+    width: 90px;
 }

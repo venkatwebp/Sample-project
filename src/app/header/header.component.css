@@ -1,5 +1,16 @@
-.navbar .navbar-brand{
+.navbar{
     color: var(--bs-white) !important;
+    background-color: #FF3951 !important;
+}
+.navbar button{
+    color: var(--bs-white) !important;
+}
+.navbar a{
+    color: var(--bs-white) !important;
+}
+.logo-bold{
+    font-size: 24px;
+    font-weight: bold;
 }
 .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
     color: var(--bs-white) !important;

@@ -1,6 +1,19 @@
 <div class="container p-20">
-    <h3 #abouthead>Welcome to {{auth.isLoggedIn ? auth.userData.displayName : 'Ram'}}</h3>
-    <h5>Meet our team of Creators, designers, and world class problem solvers</h5>
+    <!-- <h3 #abouthead>Welcome to {{auth.isLoggedIn ? auth.userData.displayName : 'Ram'}}</h3> -->
+    <div class="d-flex flex-row align-items-center">
+        <div class="img-section">
+            <img src="../../assets/images/about.jpg" />
+        </div>
+        <div class="about-text"> 
+            <h3>Why Choose Us</h3>
+            <h2>Get Instant access for Free Tutorials</h2>
+            <p>Offering a range of courses across our chain of global learning centres, each having unique features and properties, enabling us to meet our students miscellaneous demands.           </p>
+        </div>
+    </div>
+    <div class="d-flex flex-column align-items-center mt-50">
+        <h2 class="col-12 d-flex flex-row justify-content-center">Our Professional Staff</h2>
+        <p class="col-6 d-flex flex-row text-center">Our educational case studies offer real-world solutions about how we clinically transform young & bright minds.       </p>
+    </div>
 
     <div class="row">
         <div class="column col-sm-3" *ngFor="let tutor of tutors">

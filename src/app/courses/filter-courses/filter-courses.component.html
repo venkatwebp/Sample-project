@@ -1,8 +1,8 @@
-<div class="d-flex flex-row mt-10 align-items-center">
+<div class="d-flex flex-row mt-12 mb-12 align-items-center">
     <input class="form-check-input mr-12" type="radio" name="filter" value="all" [(ngModel)]="selectRadioButtonValue" (change)="onSelectionChange()">
-    <h4 class="m-0 mr-20">Total Courses ( {{all}} ) </h4>
+    <p class="m-0 mr-20">Total Courses ( {{all}} ) </p>
     <input class="form-check-input mr-12" type="radio" name="filter" value="free" [(ngModel)]="selectRadioButtonValue" (change)="onSelectionChange()">
-    <h4 class="m-0 mr-20">Free Courses ( {{free}} ) </h4>
+    <p class="m-0 mr-20">Free Courses ( {{free}} ) </p>
     <input class="form-check-input mr-12" type="radio" name="filter" value="premium" [(ngModel)]="selectRadioButtonValue" (change)="onSelectionChange()">
-    <h4 class="m-0">Premium Courses ( {{premium}} )</h4>
+    <p class="m-0">Premium Courses ( {{premium}} )</p>
 </div>
